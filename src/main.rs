@@ -22,7 +22,7 @@ struct CentralController {
 
 // #[macro_use]
 impl CentralController {
-    #[warn(dead_code)]
+    // #[warn(dead_code)]
     fn attach_turbine(&mut self, turbine: Box<dyn TurbineTrait>) {
         if self.turbines.iter().all(|x| x.get_turbine_number() != turbine.get_turbine_number()) {
             self.turbines.push(turbine);
