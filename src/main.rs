@@ -74,4 +74,8 @@ fn main() {
     for msg in received_messages {
         println!("{}", msg);
     }
+
+    println!("==================");
+    println!("Enter anything then press enter to exit: ");
+    std::io::stdin().read_line(&mut String::new()).unwrap();
 }
