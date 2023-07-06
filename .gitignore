@@ -89,3 +89,14 @@ target/debug/incremental/TurbinesController-3ejqlv8d2iak1/s-gmkgzmzsa0-cdyhm1-3t
 target/debug/incremental/TurbinesController-3ejqlv8d2iak1/s-gmkgzmzsa0-cdyhm1-3t64dvg76bqnw/work-products.bin
 target/debug/incremental/TurbinesController-3ejqlv8d2iak1/s-gmkgzmzsa0-cdyhm1.lock
 .idea/workspace.xml
+*.pdb
+*.o
+*.bin
+*.lock
+*.exe
+*.d
+*.timestamp
+target/debug/.fingerprint/TurbinesController-61ce93643ed9aebe/dep-test-bin-TurbinesController
+target/debug/.fingerprint/TurbinesController-61ce93643ed9aebe/output-test-bin-TurbinesController
+target/debug/.fingerprint/TurbinesController-61ce93643ed9aebe/test-bin-TurbinesController
+target/debug/.fingerprint/TurbinesController-61ce93643ed9aebe/test-bin-TurbinesController.json
