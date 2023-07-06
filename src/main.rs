@@ -22,12 +22,12 @@ struct CentralController {
 
 // #[macro_use]
 impl CentralController {
-    // #[warn(dead_code)]
-    // fn attach_turbine(&mut self, turbine: Box<dyn TurbineTrait>) {
-    //     if self.turbines.iter().all(|x| x.get_turbine_number() != turbine.get_turbine_number()) {
-    //         self.turbines.push(turbine);
-    //     }
-    // }
+    #[warn(dead_code)]
+    fn attach_turbine(&mut self, turbine: Box<dyn TurbineTrait>) {
+        if self.turbines.iter().all(|x| x.get_turbine_number() != turbine.get_turbine_number()) {
+            self.turbines.push(turbine);
+        }
+    }
 
     fn shutdown_turbine(&mut self, turbine_number: i32) -> String {
         if let Some(idx) = self.turbines.iter().position(|x| x.get_turbine_number() == turbine_number) {
@@ -58,6 +58,8 @@ fn main() {
             Box::new(Turbine { turbine_number: 4 }),
         ],
     };
+
+    controller.attach_turbine(Box::new(Turbine{turbine_number: 5}));
     // All turbines are on operating
     let received_messages = controller.notify_turbine("[On Operation]");
     for msg in received_messages {
