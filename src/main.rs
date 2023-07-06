@@ -50,7 +50,7 @@ impl CentralController {
 }
 
 fn main() {
-    let mut controller_mutable_variable = CentralController {
+    let mut controller = CentralController {
         turbines: vec![
             Box::new(Turbine { turbine_number: 1 }),
             Box::new(Turbine { turbine_number: 2 }),
@@ -59,16 +59,16 @@ fn main() {
         ],
     };
     // All turbines are on operating
-    let received_messages = controller_mutable_variable.notify_turbine("[On Operation]");
+    let received_messages = controller.notify_turbine("[On Operation]");
     for msg in received_messages {
         println!("{}", msg);
     }
-    // The central controller_mutable_variable shuts down several turbines
-    println!("{}", controller_mutable_variable.shutdown_turbine(2));
-    println!("{}", controller_mutable_variable.shutdown_turbine(4));
+    // The central controller shuts down several turbines
+    println!("{}", controller.shutdown_turbine(2));
+    println!("{}", controller.shutdown_turbine(4));
 
     // After shutting down some turbines
-    let received_messages = controller_mutable_variable.notify_turbine("[On Operation]");
+    let received_messages = controller.notify_turbine("[On Operation]");
     for msg in received_messages {
         println!("{}", msg);
     }
