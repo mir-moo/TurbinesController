@@ -16,6 +16,7 @@ impl TurbineTrait for Turbine {
     }
 }
 
+// this is control center
 struct CentralController {
     turbines: Vec<Box<dyn TurbineTrait>>,
 }
